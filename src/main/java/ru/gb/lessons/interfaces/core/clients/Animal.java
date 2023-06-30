@@ -37,6 +37,18 @@ public class Animal {
         //todo реализовать
     }
 
+    public void fly() {
+        System.out.println(CLASS_NAME + " flying.");
+    }
+
+    public void swim() {
+        System.out.println(CLASS_NAME + " swims.");
+    }
+
+    public void run() {
+        System.out.println(CLASS_NAME + " is moving.");
+    }
+
     //todo ПО ПРАВИЛАМ "ЧИСТОГО КОДА", МЕТОДЫ, ВЫЗЫВАЕМЫЕ ВНУТРИ ДРУГОГО МЕТОДА,
     // ЛУЧШЕ РАСПОЛАГАТЬ СРАЗУ ПОД ЭТИМ МЕТОДОМ
     public void hunt() {
