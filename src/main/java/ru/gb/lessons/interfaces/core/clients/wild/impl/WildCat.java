@@ -8,11 +8,11 @@ import java.time.LocalDate;
 /**
  Одна из реализаций дикого животного
  */
-public class Cat extends WildAnimal {
-    public Cat() {
+public class WildCat extends WildAnimal {
+    public WildCat() {
     }
 
-    public Cat(int id, int numberOfLimbs, LocalDate registrationDate, Owner owner) {
+    public WildCat(int id, int numberOfLimbs, LocalDate registrationDate, Owner owner) {
         super(id, numberOfLimbs, registrationDate, owner);
     }
 }
