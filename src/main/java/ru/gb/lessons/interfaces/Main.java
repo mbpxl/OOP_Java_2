@@ -7,10 +7,13 @@ import ru.gb.lessons.interfaces.core.clients.home.impl.Cat;
 import ru.gb.lessons.interfaces.core.clients.home.impl.Dog;
 import ru.gb.lessons.interfaces.core.clients.owners.Owner;
 import ru.gb.lessons.interfaces.core.clients.wild.impl.WildCat;
+import ru.gb.lessons.interfaces.core.drugStore.Component;
+import ru.gb.lessons.interfaces.core.drugStore.Pharmacy;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,40 +28,25 @@ import java.util.List;
  */
 public class Main {
 
-    public static void main(String ... args) {
-//        Mechanism auto = new Auto(new ArrayList<>());
-//
-//        Mechanism mechanism = new Mechanism(new ArrayList<>()) {
-//            @Override
-//            public void manage() {
-//
-//            }
-//        };
-//        Cat homeCat = new Cat(2, "Tom", 4, LocalDate.of(2022, 4,13), new Owner("Ivanov Ivan"));
-//
-//        WildCat wildCat = new WildCat(1, 4, LocalDate.of(2023, 1, 5), new Owner("incognito"));
-//
-//        homeCat.hunt();
-//        wildCat.hunt();
-//
-//        Dog dog = new Dog();
-//        dog.setName("Barbos");
+    public static void main(String[] args) {
+        Cat homeCat = new Cat(2, "Tom", 4, LocalDate.of(2022, 4, 13), new Owner("Petka"));
 
-//        System.out.println(homeCat);
-//        System.out.println(dog);
+        Dog homeDog = new Dog(1, "Barbos", 4, LocalDate.of(2022, 5, 12), new Owner("Vasya"));
 
-//        Some exemplar = new Some();
-//        exemplar.wait();
-//        System.out.println(exemplar.toString());
+        System.out.println(homeCat);
+        System.out.println(homeDog);
 
-//        Animal dog = new Dog();
+        // {LESSON 3}
 
-        AreaCalculable squareArea1 = x -> x[0] * x[0];
-        AreaCalculable squareTriangle = arg -> 0.5 * arg[0] * arg[1];
+        Pharmacy pharmacy = new Pharmacy();
+        Component component = new Component("Penicilin", "10 mg", 10);
+        Component component1 = new Component("Spirit", "100 g", 4);
 
-        double[] doubles = new double[]{7, 5};
+        pharmacy.addComponent(component).addComponent(component1);
 
-        System.out.println("Площадь треугольника: " + squareTriangle.calculate(doubles));
+        while (((Iterator<Component>) pharmacy).hasNext()) {
+            System.out.println(pharmacy.next());
+        }
 
     }
 }

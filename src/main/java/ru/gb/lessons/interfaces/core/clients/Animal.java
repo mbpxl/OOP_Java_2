@@ -10,7 +10,7 @@ import java.util.List;
 /**
   Абстракция животного - пациента ветклиники.
  */
-public class Animal {
+public abstract class Animal  {
     protected final String CLASS_NAME = "The " + getClass().getSimpleName();
 
     protected int id; //идентификатор животного для хранения в БД
@@ -45,13 +45,12 @@ public class Animal {
     public void swim() {
         System.out.println(CLASS_NAME + " swims.");
     }
-
+/*
     public void run() {
         System.out.println(CLASS_NAME + " is moving.");
     }
 
-    //todo ПО ПРАВИЛАМ "ЧИСТОГО КОДА", МЕТОДЫ, ВЫЗЫВАЕМЫЕ ВНУТРИ ДРУГОГО МЕТОДА,
-    // ЛУЧШЕ РАСПОЛАГАТЬ СРАЗУ ПОД ЭТИМ МЕТОДОМ
+ */
     public void hunt() {
         wakeUp();
         findFood();
@@ -136,5 +135,9 @@ public class Animal {
                 ", owner=" + owner +
                 ", records=" + records +
                 '}';
+    }
+
+    public String getClassName() {
+        return this.CLASS_NAME;
     }
 }

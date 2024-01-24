@@ -3,7 +3,7 @@ package ru.gb.lessons.interfaces.core.clients;
 /**
  Абстракция человека
  */
-public class Human { // todo на семинаре, в учебных целях, сделать extends Animal
+public class Human extends Animal { // todo на семинаре, в учебных целях, сделать extends Animal
     private final String fullName;
 
     public Human(String fullName) {
